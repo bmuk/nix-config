@@ -1,4 +1,5 @@
-{ cabal, alex, happy, yesodBin, yesod
+{ cabal, alex, happy, Cabal, yesodBin, yesod, yesodCore, yesodPersistent
+, yesodRoutes, yesodDefault, persistentSqlite, hjsmin, yesodStatic
 }:
 
 cabal.mkDerivation (self: {
@@ -8,7 +9,8 @@ cabal.mkDerivation (self: {
   isLibrary = true;
   isExecutable = true;
   buildDepends = [
-    yesod
+    yesod yesodBin yesodCore yesodPersistent yesodRoutes yesodDefault
+    persistentSqlite hjsmin yesodStatic
   ];
   testDepends = [];
   buildTools = [];
