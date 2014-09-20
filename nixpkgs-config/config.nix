@@ -23,6 +23,7 @@ in
   ownHaskellPackages = ver : recurseIntoAttrs (ver.override {
     extension = se : su : rec {
 
+      blog              = normalPackageS se "blog";
       # Packages required to build Yi
       ooPrototypes      = normalPackageS se "oo-prototypes";
       wordTrie          = normalPackageS se "word-trie";
