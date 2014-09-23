@@ -31,7 +31,6 @@ in
       yiContrib         = normalPackageS se "yi-contrib";
       yiHaskellUtils    = normalPackageC se "yi-haskell-utils";
       yiLanguage        = normalPackageS se "yi-language";
-      yiMonokai         = normalPackageS se "yi-monokai";
       yiRope            = normalPackageS se "yi-rope";
     };
   });
@@ -45,4 +44,5 @@ in
 
   myHaskellPackages = myHaskellPackages_ghc783;
   myHaskellPackages_profiling = myHaskellPackages_ghc783_profiling;
-};}
+};
+}

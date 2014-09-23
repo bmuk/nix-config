@@ -44,8 +44,10 @@
 	xscreensaver -no-splash &
 	feh --bg-fill --randomize /home/bmuk/.wallpapers
 	git annex assistant --autostart &
-	export PATH="/home/bmuk/.bin:$PATH"
-	dunst -to 1 &
+	dzen2 &
+	urxvtd &
+	emacs --daemon &
+	xrdb -merge /home/bmuk/.Xresources
       '';
     };
     # Xmonad Setup

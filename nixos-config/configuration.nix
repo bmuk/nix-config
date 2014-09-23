@@ -48,6 +48,21 @@
       latitude = "28.10";
       longitude = "-81.82";
     };
+    acpid = {
+      enable = true; 
+      lidEventCommands = ''
+        LID="/proc/acpi/button/lid/LID/state"
+        state=`cat $LID | ${pkgs.gawk}/bin/awk '{print $2}'`
+        case "$state" in
+          *open*) echo $(whoami) > /home/jaga/whoami ;;
+          *close*) 
+            ${pkgs.su}/bin/su bmuk -c ${pkgs.xscreensaver}/bin/xscreensaver-command -lock &
+            systemctl suspend 
+            ;;
+          *) logger -t lid-handler "Failed to detect lid state ($state)" ;;
+        esac
+      '';
+    };
   };
 
   systemd = {
@@ -61,7 +76,7 @@
   
   users = {
     mutableUsers = false;
-    defaultUserShell = "/var/run/current-system/sw/bin/zsh";
+    defaultUserShell = "/run/current-system/sw/bin/zsh";
     extraUsers.bmuk = {
       uid = 1000;
       createHome = true;

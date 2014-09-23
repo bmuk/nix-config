@@ -1,4 +1,4 @@
-{ cabal, alex, happy, Cabal, yesodBin, yesod, yesodCore, yesodPersistent
+{ cabal, alex, happy, yesodBin, yesod, yesodCore, yesodPersistent
 , yesodRoutes, yesodDefault, persistentSqlite, hjsmin, yesodStatic
 }:
 

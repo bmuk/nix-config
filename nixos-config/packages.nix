@@ -12,7 +12,7 @@
   environment.systemPackages = with pkgs; [
     # Shells
     zsh
-    bash
+    bashInteractive
     fish
     # Terminals
     xfce.terminal
@@ -37,7 +37,10 @@
     screen
     xclip
     dunst
+    dzen2
     libnotify
+    xlibs.xbacklight
+    haskellPackages.yeganesh
     # Browsers
     chromium
     torbrowser
@@ -58,7 +61,7 @@
     nodePackages.npm2nix
     nix-repl
     # Android
-    androidsdk_4_1
+    androidsdk_4_4
     # Personal Cloud Storage
     gitAndTools.gitAnnex
     # Encryption

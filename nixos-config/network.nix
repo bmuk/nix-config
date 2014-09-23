@@ -29,7 +29,9 @@
     };
     cjdns = {
       enable = true;
-      confFile = /root/cjdroute.conf;
+      UDPInterface = {
+        bind = "192.168.1.32:43211";
+      };
     };
     openvpn = {
       enable = true;
