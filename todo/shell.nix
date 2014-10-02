@@ -2,12 +2,12 @@ let pkgs = import <nixpkgs> {};
   myHaskellPackages = pkgs.myHaskellPackages;
   haskellPackages = myHaskellPackages.override {
     extension = self: super: {
-      blog = myHaskellPackages.callPackage ./. {};
+      todo = myHaskellPackages.callPackage ./. {};
     };
   };
-in pkgs.lib.overrideDerivation haskellPackages.blog (attrs: {
+in pkgs.lib.overrideDerivation haskellPackages.todo (attrs: {
   buildInputs = [ myHaskellPackages.cabalInstall pkgs.zsh ] ++ attrs.buildInputs;
   shellHook = ''
-    pushd /home/bmuk/Code/blog/
+    pushd /home/bmuk/Code/todo/
   '';
 })

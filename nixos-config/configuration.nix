@@ -21,7 +21,7 @@
       device = "/dev/sda";
     };
     kernelPackages = pkgs.linuxPackages_3_16;
-    initrd.kernelModules = [
+    kernelModules = [
       "tun"
     ];
     cleanTmpDir = true;

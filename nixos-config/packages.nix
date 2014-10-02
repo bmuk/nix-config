@@ -41,6 +41,7 @@
     libnotify
     xlibs.xbacklight
     haskellPackages.yeganesh
+    wgetpaste
     # Browsers
     chromium
     torbrowser

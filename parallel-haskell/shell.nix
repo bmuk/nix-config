@@ -8,6 +8,6 @@ let pkgs = import <nixpkgs> {};
 in pkgs.lib.overrideDerivation haskellPackages.blog (attrs: {
   buildInputs = [ myHaskellPackages.cabalInstall pkgs.zsh ] ++ attrs.buildInputs;
   shellHook = ''
-    pushd /home/bmuk/Code/blog/
+    pushd /home/bmuk/Code/parallel-haskell
   '';
 })

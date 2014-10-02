@@ -24,6 +24,7 @@ in
     extension = se : su : rec {
 
       blog              = normalPackageS se "blog";
+      todo              = normalPackageS se "todo";
       # Packages required to build Yi
       ooPrototypes      = normalPackageS se "oo-prototypes";
       wordTrie          = normalPackageS se "word-trie";
